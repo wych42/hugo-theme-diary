@@ -5,12 +5,16 @@
 <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerification }}">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 <meta content="telephone=no" name="format-detection">
-<meta name="description" content="{{ .Params.description }}">
+{{ if .Params.description }}<meta name="description" content="{{ .Params.description }}">{{ end }}
+{{ if .Params.tags }}<meta name="keywords" content="{{ delimit .Params.tags ", " }}">{{ end }}
 <meta name="renderer" content="webkit">
 <meta name="theme-color" content="#ffffff">
 {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
+{{ range .Translations }}
+    <link rel="alternate" hreflang="{{ replace .Language "zh" "zh-Han" }}" href="{{ .Permalink }}">
+{{ end }}
 <!-- metadata -->
 
 {{ if .Site.GoogleAnalytics }}
