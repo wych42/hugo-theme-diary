@@ -1,13 +1,15 @@
 $color-accent: #1976d2;
-//$color-accent: #330000;
+// $color-accent: #330000;
 $back-container-background: #fcfcfc;
 $front-container-background: #ffffff;
 
-$default-font-list: "Lora", "Noto Serif SC";
-$mono-font-list: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro",
+$mono-font-list: "Fira Mono", "Cousine", Monaco, Menlo, "Source Code Pro", 'Liberation Mono',
   monospace;
-$sans-preferred-font-list: "Montserrat", "Roboto", "Source Sans Pro",
-  "Helvetica", $default-font-list;
+$sans-preferred-font-list: "Montserrat", "Roboto", "Source Sans Pro", "Helvetica", 'Open Sans',
+  'Lantinghei TC', 'Hiragino Kaku Gothic ProN', 'Heiti TC', 'MS Mincho', 'MingLiU', sans-serif;
+
+$serif-font-list: 'Dosis', 'Helvetica Neue', 'Arial', 'Verdana', 'H-BuMing', 'FZNew XiuLi-Z11',
+  'Hiragino Mincho ProN', 'YuMincho', 'Adobe Ming Std', 'LiSong Pro Light', 'Songti TC', 'PMingLiU', serif;
 
 $side-container-width: 25%; //280px;
 $extra-container-width: 25%;
@@ -60,7 +62,7 @@ body {
   background: $back-container-background;
   padding: 0;
   margin: 0;
-  font-family: $default-font-list;
+  font-family: $sans-preferred-font-list;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
@@ -75,9 +77,7 @@ body {
 }
 
 h1, h2, h3{
-
-  font-weight: bold;
-
+  font-family: $serif-font-list;
 }
 
 h1 {
@@ -613,6 +613,12 @@ a {
       .post-item-wrapper {
         cursor: hand;
         cursor: pointer;
+
+        .post-item-title {
+          font-family: $serif-font-list;
+          font-size: $post-title-size;
+        }
+
         .post-item {
           margin: 0 28px 0 35px;
           padding: 30px 0;
@@ -636,7 +642,6 @@ a {
             }
             .post-item-title {
               font-size: $post-title-size;
-              font-weight: 600;
               font-style: normal;
               margin-bottom: 10px;
               line-height: 1.5em;
@@ -761,13 +766,16 @@ a {
     width: 100%;
     opacity: 0.3;
     color: $deep-dark-accent;
-    font-family: $default-font-list;
     font-size: 13px;
     padding: 15px;
   }
   .post {
-
     padding: 0 0 20px 0;
+    .post-title {
+      font-family: $serif-font-list;
+      font-size: $post-title-size;
+    }
+
     .post-head-wrapper {
       margin-top: -20px;
       background: no-repeat center;
@@ -783,8 +791,6 @@ a {
       }
       .post-title {
         padding: 80px 35px 30px 35px;
-        font-size: $post-title-size;
-        font-weight: 600;
         font-style: normal;
         line-height: 1.5em;
         background: -moz-linear-gradient(
@@ -845,8 +851,6 @@ a {
         padding: 30px 20px 0 20px;
       }
       .post-title {
-        font-size: $post-title-size;
-        font-weight: 600;
         font-style: normal;
         line-height: 1.5em;
         .post-subtitle {
