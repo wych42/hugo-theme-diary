@@ -12,13 +12,16 @@
                 </div>
             </div>
         </a>
-
         {{ $data := .Data }}
-        {{ range $key, $value := .Data.Terms.ByCount }}
-            <a href="{{ $.Site.LanguagePrefix | absURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}/">
-                {{ $value.Name }}<sup>{{ $value.Count }}</sup>
-            </a>
-        {{ end }}
+        <div style="margin:35px">
+            {{ range $key, $value := .Data.Terms.ByCount }}
+            <span class="post-item-wrapper">
+                <a href="{{ $.Site.LanguagePrefix | absURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}/">
+                    {{ $value.Name }}<sup>{{ $value.Count }}</sup>
+                </a>
+            </span>
+            {{ end }}
+        </div>
     </div>
 </div>
 
