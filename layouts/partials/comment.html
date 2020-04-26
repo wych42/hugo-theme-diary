@@ -1,6 +1,6 @@
-{{ if .Site.Params.disqusShortname }}
+{{ if .Site.DisqusShortname }}
 <div class="post-comment-wrapper">
-{{ template "_internal/disqus.html" . }}
+{{ template "partials/disqus.html" . }}
 </div>
 {{ end }}
 
