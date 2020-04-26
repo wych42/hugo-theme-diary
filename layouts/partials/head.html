@@ -33,8 +33,8 @@
 <!-- favicon -->
 {{ end }}
 
-{{ $styles := resources.Get "scss/journal.scss" | toCSS | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+{{ $styles_language := resources.Get (print "scss/" .Language ".scss") | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles_language.Permalink }}" integrity="{{ $styles_language.Data.Integrity }}" media="screen">
 
 {{ if not .Site.Params.disableDarkmode }}
 {{ $darkmode := resources.Get "scss/dark-mode.scss" | toCSS | minify | fingerprint }}
