@@ -1,6 +1,5 @@
 <head>
 <title>{{.Title}}</title>
-
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
 <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerification }}">
@@ -9,6 +8,9 @@
 <meta name="description" content="{{ .Params.description }}">
 <meta name="renderer" content="webkit">
 <meta name="theme-color" content="#ffffff">
+{{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
 <!-- metadata -->
 
 {{ if .Site.GoogleAnalytics }}
