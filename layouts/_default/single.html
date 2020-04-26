@@ -17,24 +17,29 @@
                         {{ .Params.description }}
                     </div>
                     {{ end }}
-                    {{ if (ne .Params.isSpecialPage true) }}
-                        <div class="post-meta">
-                            {{ if .Params.date}}
-                            <time itemprop="datePublished">
-                                {{ .PublishDate.Format "2006-01-02 15:04" }}
-                            </time>
-                            {{ end }}
+                    <div class="post-meta">
+                        {{ if .Params.date}}
+                        <time itemprop="datePublished">
+                            {{ .PublishDate.Format "2006-01-02 15:04" }}
+                        </time>
+                        {{ end }}
 
-                            {{ if .Params.categories }}
-                                <i class="material-icons" style="">folder</i>
-                                    <a href="{{ "/categories/" | relLangURL }}{{ .Params.categories | urlize }}">{{ .Params.categories }}</a>
-                                    &nbsp;
+                        {{ if .Params.categories }}
+                            <i class="material-icons" style="">folder</i>
+                                <a href="{{ "/categories/" | relLangURL }}{{ .Params.categories | urlize }}">{{ .Params.categories }}</a>
+                                &nbsp;
+                        {{ end }}
+
+                        {{ if .IsTranslated }}
+                            <i class="material-icons">language</i>
+                            {{ range .Translations }}
+                                <a href="{{ .Permalink }}">{{ i18n .Language }}</a>
                             {{ end }}
-                        </div>
-                    {{ end }}
+                        {{ end }}
+                    </div>
                 </div>
             </div>
-            
+
             <div class="post-body-wrapper">
                 <div class="post-body">
                     {{.Content}}
