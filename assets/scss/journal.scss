@@ -1,3 +1,10 @@
+$fa-font-path: "../webfonts";
+
+@import "./fontawesome/fontawesome.scss";
+@import "./fontawesome/brands.scss";
+@import "./fontawesome/solid.scss";
+
+
 $color-accent: #1976d2;
 // $color-accent: #330000;
 $back-container-background: #fcfcfc;
@@ -489,6 +496,17 @@ a {
         border-right: 2px solid $color-accent;
         background: rgba($color-accent, $nav-item-active-background-alpha);
         color: darken($color-accent, $nav-item-active-color-darken);
+      }
+      .rss {
+        width: 32px;
+        height: 32px;
+        display: block;
+        background-size: 20px 20px;
+
+        min-height:100%;
+        background:url(https://www.byvoid.com/images/icons/rss.png) 50% 50% no-repeat;
+        background-size:cover;
+        box-shadow:inset 0 0 0 100px rgba(0, 0, 0, 0.3);
       }
     }
   }
