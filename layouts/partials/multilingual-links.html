@@ -1,0 +1,6 @@
+{{ if .IsTranslated }}
+    <i class="material-icons">language</i>
+    {{ range .Translations }}
+        <a href="{{ .Permalink }}">{{ i18n .Language }}</a>
+    {{ end }}
+{{ end }}

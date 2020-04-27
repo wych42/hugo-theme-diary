@@ -28,6 +28,9 @@
             {{ end }}
         
             <div class="a-block drawer-menu-item false">
+                {{- partial "multilingual-links.html" . -}}
+            </div>
+            <div class="a-block drawer-menu-item false">
                 {{- partial "social-links.html" . -}}
             </div>
             {{ if and (not (.Site.Params.disableToC) ) (.IsPage) }}
