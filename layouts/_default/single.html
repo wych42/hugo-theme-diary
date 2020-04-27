@@ -36,6 +36,14 @@
 
             <div class="post-body-wrapper">
                 <div class="post-body">
+                    {{ if ne .Language.Lang .Params.originalLanguage }}
+                        {{ if eq .Language.Lang "zhs" }}
+                            <blockquote>本文简化字版由<a href="https://github.com/BYVoid/OpenCC">OpenCC</a>转换</blockquote>
+                        {{ end }}
+                        {{ if eq .Language.Lang "zht" }}
+                            <blockquote>本文正體字版由<a href="https://github.com/BYVoid/OpenCC">OpenCC</a>轉換</blockquote>
+                        {{ end }}
+                    {{ end }}
                     {{.Content}}
                     {{ if not .Lastmod.IsZero }}
                     <HR width="100%" id="EOF">
