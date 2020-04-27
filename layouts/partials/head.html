@@ -12,6 +12,7 @@
 {{ range .AlternativeOutputFormats -}}
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
+{{ if .Params.guid }}<link rel="amphtml" href="{{ .Permalink }}amp.html">{{ end }}
 {{ range .Translations }}
     <link rel="alternate" hreflang="{{ replace .Language "zh" "zh-Han" }}" href="{{ .Permalink }}">
 {{ end }}
