@@ -6,3 +6,30 @@ other = "简体版"
 
 [zht]
 other = "正体版"
+
+[Categories]
+other = "分类"
+
+[Tags]
+other = "标签"
+
+[Series]
+other = "系列"
+
+[Archive]
+other = "归档"
+
+[TOC]
+other = "目录"
+
+["Last modified on"]
+other = "上次修改时间"
+
+[Next]
+other = "下一篇"
+
+[Previous]
+other = "上一篇"
+
+["Related posts"]
+other = "相关日志"
