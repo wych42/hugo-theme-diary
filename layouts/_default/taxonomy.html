@@ -20,13 +20,20 @@
                             {{.Title}}
                         </div>
                         <div class="post-item-meta">
-                            {{ dateFormat "Jan 2, 2006" .Date }}
+                            {{ dateFormat "2006-01-02" .Date }}
 
                             {{ if .Draft }}
                             <span class="draft-label">DRAFT</span>
                             {{ end }}
                         </div>
                     </div>
+                    {{ $featured_image := .Params.featured_image }}
+                    {{ if $featured_image }}
+                        <div class="post-item-image-wrapper">
+                        <div class="post-item-image"
+                             style="background-image: url('{{$featured_image | relURL }}')"></div>
+                        </div>
+                    {{ end }}
                 </div>
             </div>
         </a>
