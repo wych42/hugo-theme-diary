@@ -1,9 +1,9 @@
-$fa-font-path: "../webfonts";
+@import "./syntax.scss";
 
+$fa-font-path: "../webfonts";
 @import "./fontawesome/fontawesome.scss";
 @import "./fontawesome/brands.scss";
 @import "./fontawesome/solid.scss";
-
 
 $color-accent: #1976d2;
 // $color-accent: #330000;
@@ -129,17 +129,8 @@ button {
   cursor: pointer;
 }
 
-code {
-  color: $dark-accent;
-  background: rgba($color-accent, 0.07) !important;
-  padding: 2px 5px;
-  border-radius: 3px;
-  font-family: $mono-font-list;
-}
-
 pre {
-  background: rgba(46,46,46, 1) !important;
-  color: rgba(255,255,255, 1);
+  background: rgb(248, 248, 248) !important;
   padding: 12px 15px;
   border-radius: 5px;
   font-family: $mono-font-list;
