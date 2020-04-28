@@ -4,7 +4,7 @@
     <div class="gcse-search"></div>
     {{ end }}
     {{ if and (not (.Site.Params.disableToC) ) (.IsPage) }}
-    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+    <div class="toc animated-visibility">
         {{- partial "toc.html" . -}}
     </div>
     {{ end }}
