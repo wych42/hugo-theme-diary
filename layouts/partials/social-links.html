@@ -1,8 +1,22 @@
+{{ if .Site.Params.linksGithub }}
 <a href="{{ .Site.Params.linksGithub }}" target="_blank"><i title="Github" class="fab fa-github"></i></a>
+{{ end }}
+{{ if .Site.Params.linksTelegram }}
 <a href="{{ .Site.Params.linksTelegram }}" target="_blank"><i title="Telegram" class="fab fa-telegram"></i></a>
+{{ end }}
+{{ if .Site.Params.linksFacebook }}
 <a href="{{ .Site.Params.linksFacebook }}" target="_blank"><i title="Facebook" class="fab fa-facebook"></i></a>
+{{ end }}
+{{ if .Site.Params.linksTwitter }}
 <a href="{{ .Site.Params.linksTwitter }}" target="_blank"><i title="Twitter" class="fab fa-twitter"></i></a>
+{{ end }}
+{{ if .Site.Params.linksInstagram }}
 <a href="{{ .Site.Params.linksInstagram }}" target="_blank"><i title="Instagram" class="fab fa-instagram"></i></a>
+{{ end }}
+{{ if .Site.Params.linksLinkedIn }}
 <a href="{{ .Site.Params.linksLinkedIn }}" target="_blank"><i title="LinkedIn" class="fab fa-linkedin"></i></a>
+{{ end }}
+{{ if .Site.Params.linksWeibo }}
 <a href="{{ .Site.Params.linksWeibo }}" target="_blank"><i title="Weibo" class="fab fa-weibo"></i></a>
-<a href="{{ $.Site.LanguagePrefix | absURL }}/feed.xml" target="_blank"><i title="Feed" class="fas fa-rss"></i></a>
+{{ end }}
+<a href="{{ $.Site.LanguagePrefix | absURL }}/index.xml" target="_blank"><i title="Feed" class="fas fa-rss"></i></a>

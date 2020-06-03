@@ -1,7 +1,11 @@
 <!-- Please don't remove the information of theme makers. -->
+{{ if .Site.Params.poweredBy }}
+{{ .Site.Params.poweredBy | safeHTML }}
+{{ else }}
 {{ i18n "hugo_theme" }} <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> {{ i18n "by" }} <a href="https://amazingrise.net">Rise</a>
 <br>
 {{ i18n "ported_from" }} <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+{{ end }}
 <br>
 <!-- Because this project is under MIT licence. -->
 &copy;
