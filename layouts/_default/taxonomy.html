@@ -19,13 +19,7 @@
                         <div class="post-item-title">
                             {{.Title}}
                         </div>
-                        <div class="post-item-meta">
-                            {{ dateFormat "2006-01-02" .Date }}
-
-                            {{ if .Draft }}
-                            <span class="draft-label">DRAFT</span>
-                            {{ end }}
-                        </div>
+                        {{ partial "post-item-meta.html" . }}
                     </div>
                     {{ $featured_image := .Params.featured_image }}
                     {{ if $featured_image }}

@@ -127,7 +127,9 @@ button {
 }
 
 pre {
-  background: rgb(248, 248, 248) !important;
+  //background: rgba(46,46,46, 1) !important;
+  //color: rgba(255,255,255, 1);
+  background: rgba($color-accent, 0.07);
   padding: 12px 15px;
   border-radius: 5px;
   font-family: $mono-font-list;
@@ -239,7 +241,7 @@ a {
       opacity: 0;
       text-align: left;
       padding-left: 12px;
-      padding-top: 8px;
+      //padding-top: 8px;
       //justify-content: space-between;
       //align-items: stretch;
       flex: 1;
@@ -1075,4 +1077,12 @@ mjx-container
       display: none;
     }
   }
+}
+
+.vwrap * {
+  color: black !important;
+}
+
+.vcontent p {
+  color: black !important;
 }

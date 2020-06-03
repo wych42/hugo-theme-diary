@@ -15,8 +15,8 @@
         
             {{- partial "mobile-footer.html" . -}}
             <!-- mobile footer -->
-        </div>
-        {{ partial "photoswipe.html" }}
-    <script src="{{.Site.BaseURL}}/js/journal.js"></script>
+            </div>
+    {{ partial "journal.html" .}}
+    {{ partial "photoswipe.html" }}
     </body>
 </html>
