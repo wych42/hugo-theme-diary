@@ -34,11 +34,13 @@
 <!-- favicon -->
 {{ end }}
 
-{{ $styles_language := resources.Get (print "scss/" .Language ".scss") | toCSS | minify | fingerprint }}
+{{ $journalCSSoptions := (dict "targetPath" (printf "%s.journal.css" .Language ) "includePaths" (slice (printf "assets/scss/%s" .Language))) }}
+{{ $styles_language := resources.Get "scss/journal.scss" | toCSS $journalCSSoptions | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles_language.Permalink }}" integrity="{{ $styles_language.Data.Integrity }}" media="screen">
 
 {{ if not .Site.Params.disableDarkmode }}
-{{ $darkmode := resources.Get "scss/dark-mode.scss" | toCSS | minify | fingerprint }}
+{{ $darkCSSoptions := (dict "targetPath" (printf "%s.darkmode.css" .Language ) "includePaths" (slice (printf "assets/scss/%s" .Language))) }}
+{{ $darkmode := resources.Get "scss/dark-mode.scss" | toCSS $darkCSSoptions | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $darkmode.Permalink }}" integrity="{{ $darkmode.Data.Integrity }}" media="screen">
 {{ end }}
 
