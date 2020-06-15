@@ -1,5 +1,11 @@
 <head>
 <title>{{.Title}}</title>
+
+{{ $description := .Params.description}}
+{{if .IsHome}}
+  {{ $description = .Site.Params.description}}
+{{end}}
+
 <meta charset="utf-8">
 <meta name="X-UA-Compatible" content="IE=edge">
 <meta name="google-site-verification" content="{{ .Site.Params.googleSiteVerification }}">
@@ -16,6 +22,17 @@
 {{ range .Translations }}
     <link rel="alternate" hreflang="{{ replace .Language "zh" "zh-Han" }}" href="{{ .Permalink }}">
 {{ end }}
+
+<!-- open-graph -->
+{{if .Site.Params.enableOpenGraph}}
+{{ template "_internal/opengraph.html" . }}
+{{end}}
+
+<!-- twitter-cards -->
+{{if .Site.Params.enableTwitterCards}}
+{{ template "_internal/twitter_cards.html" . }}
+{{end}}
+
 <!-- metadata -->
 
 {{ if .Site.GoogleAnalytics }}
@@ -28,6 +45,10 @@
 <script src="{{"/vendor/js/smooth-scroll.polyfills.min.js" | relURL}}" ></script>
 <link type="text/css" rel="stylesheet" href="{{"/vendor/css/bootstrap.min.css" | relURL}}">
 <script src="{{"/vendor/js/vue.min.js" | relURL}}" ></script>
+
+{{if .Site.Params.manifest}}
+<link rel="manifest" href="{{.Site.Params.manifest}}">
+{{end}}
 
 {{ if .Site.Params.favicon }}
 <link rel="icon" href="{{ .Site.Params.favicon }}">
